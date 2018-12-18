@@ -1,86 +1,62 @@
 import Square from './Square';
 import React from 'react';
-import Stomp from 'stompjs';
-//import axios from 'axios';
 
-//holds board state such as player location
-//also responsible for rendering square
+/* Renders Board - which consists of individual Squares. 
+ * All values are passed in props from Game.
+ * Squares are rendered row by row, mapping visualMap (2d array) */
 class Board extends React.Component {
     constructor(props) {
-    super(props);
-    this.state = {
-	    visualMap: [[]],
-	    playerLocation: [[], [], [], []],
-	    username: this.props.username,
-            myTurn: false
-    };
-    
-    //open websocket and start connection 
-    this.connection = 'ws://immense-castle-97130.herokuapp.com/player';
-    this.stompClient = Stomp.client(this.connection);
-    this.stompClient.connect({"user" : this.state.username}, frame => {
-	this.stompClient.subscribe("/topic/location", response => {
-            this.setState({ playerLocation: JSON.parse(response.body) });
-        });
-	 this.stompClient.subscribe("/user/topic/client", response => {
-            this.setState({ username: JSON.parse(response.body) });
-        });
-
-    });
+		super(props);
+		this.state = {
+		    visualMap: this.props.visualMap,
+		    playerLocation: this.props.playerLocation,
+		    username: this.props.username,
+		    myTurn: this.props.myTurn,
+		    websocket: this.props.websocket
+		};
     }
 
-
-    //initial start up loading map/player 
-    componentDidMount() {
-        fetch('http://localhost:8080/api/visualMap', {"user" : "laurie"})
-            .then(res => res.json())
-            .then(data => this.setState({ visualMap: data }));
-    }
-    
-    //onclick function to update individual square  
-    handleClick(squareCoord) {
-         this.stompClient.send("/sendLocation", {}, JSON.stringify({ coord: squareCoord }));
+    /* OnClick function sends clicked location and username to validate move in backend. */ 
+    handleClick(squareCoord, tile) {
+		if (this.props.myTurn) {
+            this.props.websocket.send("/sendLocation", {}, JSON.stringify({ coord: squareCoord }));
+		} else { alert("not your turn"); }
     }
 
-    //render individual square from Square.js
+    /* Render all Squares in a row. If a player is located at that coordinate - pass that information to Square. */ 
     renderSquare(type, coord) {
-	var i;
-	for (i=0; i <= 3; i++){
-           if (coord[0] === this.state.playerLocation[i][0] && coord[1] === this.state.playerLocation[i][1]) {
-                return (<Square tileType={type} 
+		var i;
+		var players = [];
+		for (i=0; i <= 3; i++){
+           if (coord[0] === this.props.playerLocation[i][0] && coord[1] === this.props.playerLocation[i][1]) {
+				players.push(i);
+		   }
+		}
+	    return (
+	    	<Square tileType={type} 
 		    coord={coord} 
-		    playerID={i+1} 
-		    onClick={() => this.handleClick(coord)}
-		   />);
-	    }
+		    playerID={players} 
+		    onClick={() => this.handleClick(coord, type)}
+		/>);	    
 	}
-	    return (<Square tileType={type} 
-                 coord={coord}
-                 playerID={0}
-                 onClick={() => this.handleClick(coord)}
-                />);
-
-        }
     
-
-    //takes row of map to render
+    /* Map a row of Squares to renderSquare */
     renderRows(grid, x) {
-	return grid.map((row, y) => <div key={y}> {this.renderSquare(row, [x,y])}</div> );
+		return grid.map((row, y) => <div key={y}> {this.renderSquare(row, [x,y])} </div>);
     }
-
+    
+    /* Render all Squares */
     render() {
-	const all = this.state.visualMap; 
-        return (
-	    <div>
+	var all = this.props.visualMap;
+    return (
+		<div>
 	        {all.map((x, i) => <div className='board-row' key={i}> {this.renderRows(x, i)} </div>)}
 		</div>
-    );
+	);
   }
 }
 
 
 // ========================================
 
-
 export default Board;
-

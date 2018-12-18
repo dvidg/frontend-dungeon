@@ -1,17 +1,23 @@
-/*
-
-@media all and (min-width: 480px) {
+/*@media all and (min-width: 480px) {*/
   .Login {
     padding: 100px 0;
+    background: #212121;
+    opacity: 0%;
+    top: 200px;
   }
 
   .Login form {
     margin: 0 auto;
     max-width: 320px;
+    background: #212121;
+    opacity: 50%;
   }
-}
-*/
-/*
+
+  .Login, textarea {
+    top: 400px;
+    background: #212121;
+  }
+
 @import url(https://fonts.googleapis.com/css?family=Denk+One);
 
 @dark-gray: #212121;
@@ -21,27 +27,21 @@
 @blue: 0;
 
 body {
-  background-color: @dark-gray;
-  background-image: url(http://static.comicvine.com/uploads/original/11124/111242827/4844517-4138445607-cthul.jpg);
-width:100%;
-height:100%;
-	background-size:cover;
+  background-color: #212121;
 }
 
 h1 {
-  color: transparent;
+  color: red;
   text-shadow: 0 0 5px rgba(0,0,0,0.5);
-  font-family: 'Denk One', sans-serif;
+  font-family: 'Creepster';
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 5em;
-	text-align:fit;
-
-  position: relative;
-  left: 55%;
-  top: 20%;
-  margin-left: -325px;
-	margin-top:275px;
+  font-size: 2em;
+  opacity: 70%;
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  margin-left: -180px;
 
   -webkit-animation: horror-animation 5s infinite;
   -moz-animation: horror-animation 5s infinite;
@@ -49,11 +49,135 @@ h1 {
   animation: horror-animation 5s infinite;
 }
 
-@-webkit-keyframes horror-animation {.mixi-frames;}
-@-moz-keyframes horror-animation {.mixi-frames;}
-@-o-keyframes horror-animation {.mixi-frames;}
-@keyframes horror-animation {.mixi-frames;}
-
+ @-webkit-keyframes horror-animation {         0% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.1); left: 51%; top: 36%;}
+        5% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 50%; top: 35%;}
+  10% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%; top: 34%;}
+        15% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%; top: 35%;}
+  16% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  17% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%;}
+        20% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 49%}
+  25% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 49%}
+        30% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.7); left: 50%}
+        35% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  36% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  37% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  40% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.9); left: 51%}
+        45% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 51%}
+        50% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.7); left: 51%}
+        55% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 50%}
+  56% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  57% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 52%}
+  60% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+        65% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%}
+        70% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%}
+  75% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+  76% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  77% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+        80% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.1); left: 49%}
+        85% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  86% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  87% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  90% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.3); left: 51%}
+        95% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 51%}
+        100% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+} 
+@-moz-keyframes horror-animation {         0% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.1); left: 51%; top: 36%;}
+        5% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 50%; top: 35%;}
+  10% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%; top: 34%;}
+        15% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%; top: 35%;}
+  16% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  17% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%;}
+        20% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 49%}
+  25% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 49%}
+        30% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.7); left: 50%}
+        35% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  36% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  37% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  40% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.9); left: 51%}
+        45% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 51%}
+        50% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.7); left: 51%}
+        55% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 50%}
+  56% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  57% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 52%}
+  60% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+        65% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%}
+        70% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%}
+  75% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+  76% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  77% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+        80% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.1); left: 49%}
+        85% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  86% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  87% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  90% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.3); left: 51%}
+        95% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 51%}
+        100% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+}
+ @-o-keyframes horror-animation {         0% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.1); left: 51%; top: 36%;}
+        5% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 50%; top: 35%;}
+  10% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%; top: 34%;}
+        15% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%; top: 35%;}
+  16% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  17% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%;}
+        20% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 49%}
+  25% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 49%}
+        30% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.7); left: 50%}
+        35% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  36% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  37% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  40% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.9); left: 51%}
+        45% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 51%}
+        50% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.7); left: 51%}
+        55% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 50%}
+  56% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  57% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 52%}
+  60% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+        65% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%}
+        70% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%}
+  75% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+  76% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  77% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+        80% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.1); left: 49%}
+        85% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  86% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  87% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  90% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.3); left: 51%}
+        95% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 51%}
+        100% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+}
+@keyframes horror-animation {        0% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.1); left: 51%; top: 36%;}
+        5% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 50%; top: 35%;}
+  10% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%; top: 34%;}
+        15% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%; top: 35%;}
+  16% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  17% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%;}
+        20% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 49%}
+  25% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 49%}
+        30% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.7); left: 50%}
+        35% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  36% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  37% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 50%}
+  40% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.9); left: 51%}
+        45% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.8); left: 51%}
+        50% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.7); left: 51%}
+        55% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 50%}
+  56% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  57% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.6); left: 52%}
+  60% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+        65% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 50%}
+        70% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.3); left: 49%}
+  75% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+  76% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  77% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 49%}
+        80% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.1); left: 49%}
+        85% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  86% {text-shadow: 0 0 5px @dark-gray; left: 50%}
+  87% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.2); left: 51%}
+  90% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.3); left: 51%}
+        95% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 51%}
+        100% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
+}
+/*
 .mixi-frames () {
 	0% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.1); left: 51%; top: 36%;}
 	5% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.2); left: 50%; top: 35%;}
@@ -86,4 +210,4 @@ h1 {
   90% {text-shadow: 0 0 5px rgba(@red,@green,@blue,0.3); left: 51%}
 	95% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.4); left: 51%}
  	100% {text-shadow: 0 0 10px rgba(@red,@green,@blue,0.5); left: 50%}
-} */
+}*/

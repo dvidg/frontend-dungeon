@@ -1,53 +1,60 @@
 import React from 'react';
-import floor from './floor.png';
-import counter1 from './counter1.png';
-import counter2 from './counter2.png';
-import counter3 from './counter3.png';
-import counter4 from './counter4.png';
 
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const images = importAll(require.context('../public', false, /\.(png|jpe?g|svg)$/));
+
+
+/* Square renders an individual tile.
+ * Child component to Board.
+ * Renders players, and tile type depending on props.
+ */
 class Square extends React.Component {
   constructor(props) {
     super(props);
 	  this.state = { 
 		  tileType: this.props.tileType,
 		  coord: this.props.coord,
-		  playerID: this.props.playerID
+		  playerID: this.props.playerID,
+		  floorType: this.props.floorType
 	  };
   }
-
-   //setting playerID state from props
+/*
+    setting playerID state from props 
    componentWillReceiveProps(nextProps){
       if(nextProps.playerID !== this.props.playerID){
           this.setState({playerID:nextProps.playerID});
         }
     }
-
+*/
+	/* Loop through player list to render counters. */
     playerTile(playerID){
-	if (this.state.playerID === 1) {
-	}
-        switch(playerID) {
-	    case 1:
-                return (<img className= {"squarePlayer"} src={counter1} alt='c' />);
-            case 2:
-	        return (<img className= {"squarePlayer"} src={counter2} alt='c' />);
-	    case 3:
-                return (<img className= {"squarePlayer"} src={counter3} alt='c' />);
-            case 4:
-                return (<img className= {"squarePlayer"} src={counter4} alt='c' />);
-	    default:
-		return;
+		var i;
+		var playerCounters = [];
+	    for (i=0; i < playerID.length; i++) {
+                if (playerID.length === 1){
+					playerCounters.push(<img className= {"squarePlayer4"} src={images["counter" + (playerID[i]+1) + ".png"]} alt='c' />);
+				} 
+				else {
+					playerCounters.push(<img className= {"squarePlayer" + playerID[i]} src={images["counter" + (playerID[i]+1) + ".png"]} alt='c' />);
+				}
+			}
+		return playerCounters;
 		}
-    }
-
-  //render differently depending on whether player is on tile	  
-  render() {
+	
+render() {
 	return (
             <button className="square" onClick= {() => this.props.onClick()} >
-                <img className="backgroundPlayer" src={floor} alt='oops' />
-                {this.playerTile(this.state.playerID)}
+            <img className="backgroundPlayer" src={images["floor_" + this.props.tileType + ".png"]} alt={this.props.tileType}/>
+                {this.playerTile(this.props.playerID)}
 	    </button>
         );
   }
+
 
 }
 

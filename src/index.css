@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Homemade+Apple");
+
+
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
@@ -7,42 +10,105 @@ ol, ul {
   padding-left: 30px;
 }
 
-.board-row {
-  max-width: 1666px;
-  width: 1666px;
+h2 {
+  color: white;
+}
+
+.playersTable th {
+  text-align: center;
+  color: red;
+  border: solid 1px white;
+}
+
+.playersTable td {
+  border: solid 1px white;
+}
+
+.playersTable {
+  font-size: 20px;
+  color: white;
+  border-collapse: collapse;
+  text-align: center;
+  width: 500px;
+  border-style: hidden;
 
 }
 
-.board-row:after {
+.playerLobbyList {
+  
+}
+
+.board-row {
+  max-width: 73%; /* max 73% */
+  width: 73%;
+}
+
+/*.board-row:after {
   clear: both;
   content: "";
-}
+}*/
 
-.status {
+/*.status {
   margin-bottom: 10px;
-}
+}*/
 
 .square {
-  border: 1px solid #999;
   float: left;
-  font-size: 2px;
-  line-height: 34px;
-  height: 34px;
+  /*font-size: 40px;
+  line-height: 34px;*/
+  height: 10%;
+  border: 0px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 10%;
   position: relative;
   top: 0;
   left: 0;
 }
 
-.squarePlayer {
+.squarePlayer0 {
 position: absolute;
-top: 12px;
-left: 12px;
+top: 12.5%;
+left: 12.5%;
+max-height: 33.33%;
+max-width: 33.33%;
 }
+
+.squarePlayer1 {
+position: absolute;
+top: 12.5%;
+left: 54.2%;
+max-height: 33.33%;
+max-width: 33.33%;
+}
+
+.squarePlayer2 {
+position: absolute;
+top: 54.2%;
+left: 12.5%;
+max-height: 33.33%;
+max-width: 33.33%;
+}
+
+.squarePlayer3 {
+position: absolute;
+top: 54.2%;
+left: 54.2%;
+max-height: 33.33%;
+max-width: 33.33%;
+}
+
+.squarePlayer4 {
+position: absolute;
+top: 33.3%;
+left: 33.3%;
+max-height: 33.33%;
+max-width: 33.33%;
+}
+
+
 
 .playerBackground {
 position: relative;
@@ -66,5 +132,88 @@ left: 0;
 
 .game-info {
   margin-left: 20px;
+}
+
+.backgroundPlayer {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+
+/*  Side bar stuff   */
+.eventHistory {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  max-width: 25%;
+  height: 75%;
+}
+
+.statsTable {
+  font-size: 20px;
+  color: white;
+  border-spacing: 5px;
+  border-collapse: separate;
+  text-align: center;
+}
+
+tr {
+  height: 30px;
+}
+
+.gameTabs {
+  font-size: 20px;
+  color: white;
+}
+
+
+/*  Root stuff  */
+.root {
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0; 
+}
+
+.modal-body {
+   background-image: url(./Parchment.png);
+   background-size: cover;
+   background-position: center center;
+}
+
+.modal-header {
+   background-image: url(./Parchment.png);
+   background-size: cover;
+   background-position: center center;
+}
+
+.modal-footer {
+   background-image: url(./Parchment.png);
+   background-size: cover;
+   background-position: center center;
+}
+
+span.emoji {
+  font-size:60px;
+  color: red;
+}
+
+span.omen {
+  color: red;
+}
+
+.popup {
+  text-align: center;
+  color: black;
+  background-image: url('./Parchment.png');
+  position: absolute;
+  font-size: 18pt;
+  background-position: center center;
+  width: 50%;
+  height: 55%;
+  text-position: center;
+  font-family: 'Homemade Apple', cursive;
+  padding: 25px;
+  top: 25%;
+  left: 25%;
 }
 
