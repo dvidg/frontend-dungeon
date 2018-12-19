@@ -37,7 +37,7 @@ export default class Lobby extends Component {
         };
 
         /* Open websocket connection and setup subscriptions. */
-        this.connection = 'wss://immense-castle-97130.herokuapp.com/player';
+        this.connection = 'ws://localhost:8080/player';
         this.stompClient = Stomp.client(this.connection);
         this.stompClient.connect({"user" : this.state.user}, frame => {
             // Receive message when game starts
